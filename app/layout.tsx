@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Nunito } from "next/font/google";
+
 import "./globals.css";
 
 const nunito = Nunito({
@@ -7,8 +8,6 @@ const nunito = Nunito({
   variable: '--font-nunito',
   weight: ['400', '500', '600', '700', '800', '900'],
 });
-
-
 
 export const metadata: Metadata = {
   title: "Next Pizza",
@@ -22,7 +21,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={nunito.variable}>{children}</body>
+      <body className={nunito.className}>
+        <main className="min-h-screen">
+          {children}
+        </main>
+      </body>
     </html>
   );
 }
