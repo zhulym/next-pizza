@@ -5,10 +5,8 @@ interface IProps {
     className?: string;
 };
 
-const Container = ({ children, className }: PropsWithChildren<IProps>) => (
+export const Container = ({ children, className }: PropsWithChildren<IProps>) => (
     <div className={cn('mx-auto max-w-[1280px]', className)}>
         {children}
     </div>
 );
-
-export default Container;
